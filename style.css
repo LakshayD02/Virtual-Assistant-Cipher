@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    background: linear-gradient(135deg, #290000, #00003a);
+    background-size: 100% 100%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 60px; /* Increased height for larger microphone button */
+    border-radius: 30px; /* Adjusted border radius for larger microphone button */
+    background: linear-gradient(45deg, #000000, #FF0000, #8B0000); /* Dark gradient background */
+    margin-top: 20px;
+}
+
+.main .image-container {
+    padding: 10px;
+}
+
+.main .image-container .image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .image-container .image img {
+    width: 350px;
+    align-items: center;
+    animation: botFloat 4.5s ease-in-out infinite alternate, fadeIn 4.5s ease forwards; /* Bot floating animation and fade-in animation */
+}
+@keyframes botFloat {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(-40px); /* Move up halfway */
+    }
+    100% {
+        transform: translateY(-20px); /* Move back to original position */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px); /* Initial position slightly above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to final position */
+    }
+}
+
+.main .image-container h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin bottom */
+    font-size: 70px; /* Larger font size for "Cypher" */
+    font-family: 'Montserrat', sans-serif; /* Font family change */
+    letter-spacing: 2px; /* Adjusted letter spacing */
+    animation: textAnimation 1s ease forwards; /* Animation for heading */
+    background-image: linear-gradient(to right, #ff4d00, #006eff); /* Gradient background */
+    -webkit-background-clip: text; /* Apply gradient only to text */
+    background-clip: text; /* Apply gradient only to text */
+    color: transparent; /* Make text transparent */
+}
+
+@keyframes textAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px); /* Initial position slightly above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to final position */
+    }
+}
+
+
+.main .image-container p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    background-image: linear-gradient(90deg, #0957ff, rgb(68, 218, 255), #83bbff); /* Gradient color */
+    -webkit-background-clip: text; /* Apply gradient only to text */
+    background-clip: text; /* Apply gradient only to text */
+    color: transparent; /* Make text transparent */
+    animation: fadeIn 1s ease forwards, textAnimation 1s ease forwards; /* Fade in animation and text animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: translateY(-10px); /* Initial position slightly above */
+    }
+    100% {
+        transform: translateY(0); /* Move to final position */
+    }
+}
+
+.main .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 60px; /* Increased height for larger microphone button */
+    border-radius: 30px; /* Adjusted border radius for larger microphone button */
+    background: linear-gradient(45deg, #000000b9, #0059be); /* Dark gradient background */
+    margin-top: 20px;
+}
+
+.main .input .talk {
+    background: #000000; /* Button background color */
+    outline: none;
+    border: none;
+    width: 60px; /* Increased width for larger microphone button */
+    height: 60px; /* Increased height for larger microphone button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Increased font size for microphone icon */
+    cursor: pointer;
+    transition: 0.3s ease; /* Smooth transition for hover effect */
+    margin-right: 10px;
+    border-radius: 50%; /* Rounded button */
+    position: relative;
+}
+
+.main .input .talk:hover {
+    background: #0077cc; /* Hover state background color */
+}
+
+.main .input .talk i {
+    color: #fff; /* Button icon color */
+}
+
+.main .input .talk:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #fff; /* Mic animation color */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: micPulse 0.5s linear infinite alternate;
+}
+
+@keyframes micPulse {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+.main .input .content {
+    color: #fff; /* Input text color */
+    font-size: 15px;
+    margin-right: 20px;
+    flex: 1; /* Take remaining space */
+}
+
+@media only screen and (max-width: 500px) {
+    /* Styles for phones */
+    .main .image-container .image img {
+        width: 80%; /* Adjusted width for the image on mobile */
+        max-width: 300px; /* Maximum width for the image on mobile */
+    }
+    .main .image-container h1 {
+        font-size: 40px; /* Decreased font size for "Cipher" on mobile */
+    }
+    .main .input {
+        width: 80vw; /* Adjusted width for mobile */
+    }
+    .main .input .talk {
+        width: 60px; /* Adjusted width for smaller microphone button on mobile */
+        height: 60px; /* Adjusted height for smaller microphone button on mobile */
+        font-size: 24px; /* Adjusted font size for smaller microphone button on mobile */
+    }
+    .main .input .content {
+        font-size: 16px; /* Adjusted font size for "Click Here to Speak to Cipher" on mobile */
+    }
+}
+
