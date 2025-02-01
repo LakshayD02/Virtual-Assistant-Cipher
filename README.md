@@ -15,7 +15,7 @@ Cipher is a versatile virtual assistant designed to simplify everyday tasks. Bui
 * **Responsive Design:** Works seamlessly on desktops, tablets, and mobile devices. 📱💻
 
 * **User-Friendly Interface:** Intuitive and easy-to-navigate design. 👍
-*
+
 *  **Voice Interaction:** "Click Here to Speak to Cipher" enables hands-free voice command input. 🎤
 
 * **HTML Structure:** Well-structured HTML for a solid foundation. 🧱
